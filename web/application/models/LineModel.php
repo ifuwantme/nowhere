@@ -8,5 +8,10 @@ Yaf_Loader::import(APP_PATH.'/application/models/BaseModel.php');
  */
 class LineModel extends BaseModel
 {
-
+    public function __construct()
+    {
+        parent::__construct();
+        $this->_table = 'nw_subwayline';
+        $this->_entity = array('line_num','name');
+    }
 }

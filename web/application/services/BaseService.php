@@ -10,6 +10,11 @@ abstract class  BaseService implements BaseService_Imp
 {
     protected $_service = null;
 
+    public function __construct()
+    {
+
+    }
+
     public function getModel($m)
     {
 
@@ -17,12 +22,15 @@ abstract class  BaseService implements BaseService_Imp
 //        $this->_service = ReflectionClass::export($m);
         $class = new ReflectionClass($m);
         $this->_service = $class->newInstance();
-        $this->_service->get();
+        $m = $this->_service->getAll();
+        return $m;
     }
 
-    public function queryFactory($db)
+    public function queryFactory()
     {
         // TODO: Implement queryFactory() method.
-        echo 'cba';
+
+        $r = $this->_service->originQuery();
+        return $r;
     }
 }

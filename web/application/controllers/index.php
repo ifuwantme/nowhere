@@ -1,5 +1,5 @@
 <?php
-Yaf_Loader::import(APP_PATH.'/application/services/LineService.php');
+Yaf_Loader::import(APP_PATH.'/application/services/TrainService.php');
 
 
 /**
@@ -13,11 +13,12 @@ Yaf_Loader::import(APP_PATH.'/application/services/LineService.php');
 class IndexController extends Yaf_Controller_Abstract{
 
     protected function init(){
-        $this->lineService = new LineService();
+        $this->trainService = new TrainService();
     }
     public function indexAction(){
 
-        $message = $this->lineService->index();
+        $message = $this->trainService->index();
+        echo $message;
         $this->getView()->assign("content", $message);
         
     }

@@ -6,7 +6,7 @@ Yaf_Loader::import(APP_PATH.'/application/services/BaseService.php');
  * Date: 2017/6/19
  * Time: 下午2:56
  */
-class LineService extends BaseService
+class SiteService extends BaseService
 {
     public function __construct()
     {
@@ -14,7 +14,7 @@ class LineService extends BaseService
     }
 
     public function index(){
-        return $this->getModel('LineModel');
+        return $this->getModel('SiteModel');
 
     }
 }

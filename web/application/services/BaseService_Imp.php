@@ -9,5 +9,5 @@
 interface BaseService_Imp
 {
     public function getModel($m);
-    public function queryFactory($db);
+    public function queryFactory();
 }
