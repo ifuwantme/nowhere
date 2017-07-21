@@ -10,4 +10,5 @@ interface BaseService_Imp
 {
     public function getModel($m);
     public function queryFactory();
+    public function insert($m,$data);
 }

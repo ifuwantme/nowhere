@@ -33,4 +33,14 @@ abstract class  BaseService implements BaseService_Imp
         $r = $this->_service->originQuery();
         return $r;
     }
+
+    public function insert($m,$data)
+    {
+        Yaf_Loader::import(APP_PATH.'/application/models/'.$m.'.php');
+//        $this->_service = ReflectionClass::export($m);
+        $class = new ReflectionClass($m);
+        $this->_service = $class->newInstance();
+        $r = $this->_service->save($data);
+        return $r;
+    }
 }

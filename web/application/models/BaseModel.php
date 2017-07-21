@@ -33,10 +33,21 @@ class BaseModel
         return $result;
     }
 
-    public function originQuery(){
+    public function originQuery($query){
+        if($query){
+            $result = $this->_db->query($query)->fetchAll();
+        }else{
+            $result = $this->_db->query($this->_var)->fetchAll();
+        }
 
-        $result = $this->_db->query($this->_var)->fetchAll();
 
         return $result;
     }
+
+    public function save($data){
+        $result = $this->_db->insert($this->_table,$data);
+
+        return $result;
+    }
+
 }
