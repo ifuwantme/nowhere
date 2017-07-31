@@ -11,7 +11,7 @@ class RelaModel extends BaseModel
     public function __construct()
     {
         parent::__construct();
-        $this->_table = 'nw_stationrela';
+        $this->_table = 'nw_stationrela_alg';
 
     }
 }

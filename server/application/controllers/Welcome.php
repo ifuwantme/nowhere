@@ -1,8 +1,12 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
+	public function __construct() {
+		parent::__construct();
+		$this->load->database();
+	}
 	/**
 	 * Index Page for this controller.
 	 *
@@ -20,6 +24,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$r = $this->db->query("select * from nw_subwayline")->result();
+		echo json_encode($r);
 		$this->load->view('welcome_message');
 	}
 }
